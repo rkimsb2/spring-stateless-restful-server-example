@@ -28,7 +28,7 @@ public class AuthController {
 		if (targetUser == null) {
 			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
 		}
-		// TODO: response body beautify는 나중에...
+		// TODO: beautify response body
 		String jwt = Jwts.builder().setAudience(targetUser.getUuid().toString())
 				.claim("autorities", targetUser.getAuthorities()).setIssuedAt(new Date())
 				.setExpiration(new Date(System.currentTimeMillis() + 7 * 24 * 60 * 60 * 1000))

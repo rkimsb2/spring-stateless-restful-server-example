@@ -3,7 +3,6 @@ package com.krw.spring.constants;
 import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.security.Security;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
@@ -15,7 +14,6 @@ public class AuthConstants {
 	private static PublicKey jwtPublicKey;
 
 	static {
-		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 		try {
 			KeyFactory kf = KeyFactory.getInstance("RSA");
 

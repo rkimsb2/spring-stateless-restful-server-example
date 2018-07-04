@@ -55,6 +55,8 @@ public class SpringConfig {
 					.antMatchers(HttpMethod.POST, REGISTER_ENTRY_POINT).permitAll()
 					.antMatchers(HttpMethod.POST, LOGIN_ENTRY_POINT).permitAll()
 					.anyRequest().authenticated();
+			
+			http.requiresChannel().anyRequest().requiresSecure();
 			// @formatter:on
 		}
 
